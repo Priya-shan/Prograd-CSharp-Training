@@ -12,7 +12,7 @@ namespace CSharp_Concepts
     {
         public void testingAnonymousFn()
         {
-            DelegateForMath dm = delegate (int a, int b) { return a + b; };
+            DelegateForMath dm = delegate (int a, int b) { int c = a + b; return c; };
             Console.WriteLine(dm(10, 16));
 
             DelegateForPrint print = delegate () { Console.WriteLine("Helloo World !"); };

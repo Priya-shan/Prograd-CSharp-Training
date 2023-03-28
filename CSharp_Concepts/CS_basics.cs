@@ -8,7 +8,7 @@ namespace CSharp_Concepts
 {
     public class CS_basics
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             //integer
             int a = 10;

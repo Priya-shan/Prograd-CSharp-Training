@@ -87,16 +87,15 @@ namespace CSharp_Concepts
             //fileInfo.Create();
 
             //Delegates
-
-            //HelloWorld.delegatesExample obj = new delegatesExample();
-            //all the methods added to delegates should be of same return type
+            //CSharp_Concepts.delegatesExample obj = new delegatesExample();
+            ////all the methods added to delegates should be of same return type
             //addition_Delegate ad = obj.addition;
             //ad += obj.subraction;
 
             //Console.WriteLine(ad(1, 2));
 
-            // if return type is not void only recently added will be executed so we have to use 
-            //invocation list to stack it up and loop it one by one
+            ////if return type is not void only recently added will be executed so we have to use
+            ////invocation list to stack it up and loop it one by one
             //Delegate[] list = ad.GetInvocationList();
             //foreach (Delegate d in list)
             //{
@@ -106,18 +105,18 @@ namespace CSharp_Concepts
             //Console.WriteLine("-------------------");
             ////removing a function from delegate
             //ad -= obj.subraction;
-            //ad(1,2);
+            //ad(1, 2);
 
             //Console.WriteLine(ad.Invoke(1, 2));
 
 
             //..anonymous fnk
-            //HelloWorld.AnonymousFunction obj = new AnonymousFunction();
-            //obj.testingAnonymousFn();
+            CSharp_Concepts.AnonymousFunction obj = new AnonymousFunction();
+            obj.testingAnonymousFn();
 
             //lambda function
-            HelloWorld.LambdaExp obj = new LambdaExp();
-            obj.testingLambda();
+            //HelloWorld.LambdaExp obj = new LambdaExp();
+            //obj.testingLambda();
         }
     }
 }
