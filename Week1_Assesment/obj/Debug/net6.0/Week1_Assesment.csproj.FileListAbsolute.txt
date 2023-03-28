@@ -1,0 +1,15 @@
+C:\Users\HP\source\repos\Week1_Assesment\bin\Debug\net6.0\Week1_Assesment.exe
+C:\Users\HP\source\repos\Week1_Assesment\bin\Debug\net6.0\Week1_Assesment.deps.json
+C:\Users\HP\source\repos\Week1_Assesment\bin\Debug\net6.0\Week1_Assesment.runtimeconfig.json
+C:\Users\HP\source\repos\Week1_Assesment\bin\Debug\net6.0\Week1_Assesment.dll
+C:\Users\HP\source\repos\Week1_Assesment\bin\Debug\net6.0\Week1_Assesment.pdb
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.AssemblyInfo.cs
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.dll
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\refint\Week1_Assesment.dll
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.pdb
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\Week1_Assesment.genruntimeconfig.cache
+C:\Users\HP\source\repos\Week1_Assesment\obj\Debug\net6.0\ref\Week1_Assesment.dll

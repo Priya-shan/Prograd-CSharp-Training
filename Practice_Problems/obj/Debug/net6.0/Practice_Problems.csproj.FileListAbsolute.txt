@@ -1,0 +1,15 @@
+C:\Users\HP\source\repos\Practice_Problems\bin\Debug\net6.0\Practice_Problems.exe
+C:\Users\HP\source\repos\Practice_Problems\bin\Debug\net6.0\Practice_Problems.deps.json
+C:\Users\HP\source\repos\Practice_Problems\bin\Debug\net6.0\Practice_Problems.runtimeconfig.json
+C:\Users\HP\source\repos\Practice_Problems\bin\Debug\net6.0\Practice_Problems.dll
+C:\Users\HP\source\repos\Practice_Problems\bin\Debug\net6.0\Practice_Problems.pdb
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.AssemblyInfo.cs
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.dll
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\refint\Practice_Problems.dll
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.pdb
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\Practice_Problems.genruntimeconfig.cache
+C:\Users\HP\source\repos\Practice_Problems\obj\Debug\net6.0\ref\Practice_Problems.dll
