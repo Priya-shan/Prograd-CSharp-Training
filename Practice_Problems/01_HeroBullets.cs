@@ -7,7 +7,8 @@ namespace Practice_Problems
 {
     internal class HeroBullets
     {
-        static void Hero_Bullets() { 
+        static void Main(string[] args)
+        { 
             //Hero-Villian Program
 
             Console.WriteLine("Welcome to BattleGround !!!!");
