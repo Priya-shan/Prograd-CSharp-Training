@@ -9,7 +9,7 @@ namespace Practice_Problems
 {
     internal class SpiralMatrix
     {
-        public static void SpiralMatrix_()
+        public static void Main(string[] args)
         {
             int[,] board = {
             { 1,  2,   3,   4 },
