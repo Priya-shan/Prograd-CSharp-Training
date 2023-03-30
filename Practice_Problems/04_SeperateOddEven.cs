@@ -4,7 +4,7 @@ namespace Practice_Problems
 {
     internal class _04_SeperateOddEven
     {
-        public static void seperate()
+        public static void Main(string[] args)
         {
             int[] arr = { 12, 22, 11, 6, 23, 10, 2, 3 };
             int EventCount = 0, OddCount = 0;
