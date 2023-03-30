@@ -11,7 +11,7 @@ namespace Practice_Problems
 {
     internal class MergeArray
     {
-        public static void mergearray() 
+        public static void Main(string[] args) 
         {
             int[] arr1 = new int[]{ 22, 11, 23, 10, 3 };
             int[] arr2 = new int[] { 9, 15, 25, 19, 1 };
