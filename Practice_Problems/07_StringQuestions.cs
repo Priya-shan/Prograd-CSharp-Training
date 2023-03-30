@@ -9,7 +9,7 @@ namespace Practice_Problems
 {
     internal class exchange
     {
-        public static void exchange_()
+        public static void Main(string[] args)
         {
             Console.Write("enter string : ");
             String str = Console.ReadLine();
