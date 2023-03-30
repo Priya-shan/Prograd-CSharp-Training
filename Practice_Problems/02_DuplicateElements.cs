@@ -7,7 +7,7 @@ namespace Practice_Problems
 {
     internal class _02_DuplicateElements
     {
-        public static void DuplicateElements()
+        public static void Main(string[] args)
         {
             //get size of array from user
             Console.WriteLine("Enter Size of the Array");
