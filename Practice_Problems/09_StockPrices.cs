@@ -8,7 +8,7 @@ namespace Practice_Problems
 {
     internal class StockPrices
     {
-        public static void StockPrices_()
+        public static void Main(string[] args)
         {
             int[] stockPrices = { 7, 1, 5, 2, 6, 4};
             Console.WriteLine(findProfit(stockPrices));
