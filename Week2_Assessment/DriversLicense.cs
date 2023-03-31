@@ -31,24 +31,25 @@ License("Aaron", 3, "Jane Max Olivia Sam") ➞ 20
         {
             Console.WriteLine("Enter your name");
             string name=Console.ReadLine();
-            Console.WriteLine("ENter number of Agents");
+            Console.WriteLine("Enter number of Agents");
             int no_of_agents=Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("ENter other customers name with space separated");
+            Console.WriteLine("Enter other customers name with space separated");
             string customers = Console.ReadLine();
 
             string[] otherPeoples = customers.Split(" ");
 
             //finding eligible peoples i.e, peoples before me in alphabetical order 
-            ArrayList eligiblePeoples=new ArrayList();
-            foreach (string s in otherPeoples)
-            {
-                if((int)s[0] < (int)name[0])
-                {
-                    eligiblePeoples.Add(s);
-                }
+
+            ArrayList allPeoples=new ArrayList();
+            allPeoples.Add(name);
+
+            foreach (string s in otherPeoples){
+                allPeoples.Add(s);
             }
+
+            allPeoples.Sort();
+            int count_of_eligible = allPeoples.IndexOf(name);
             //Calculating the Wait time
-            int count_of_eligible = eligiblePeoples.Count;
             int result = (count_of_eligible / no_of_agents)*20;
             result = result + 20;
             Console.WriteLine("Time Taken :"+result);
