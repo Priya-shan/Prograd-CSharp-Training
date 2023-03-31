@@ -66,6 +66,10 @@ namespace Practice_Problems
             Console.WriteLine(result);
 
         }
+        public static void test()
+        {
+
+        }
 
     }
 }
