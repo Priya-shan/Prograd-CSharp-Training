@@ -1,0 +1,2 @@
+C:\Users\HP\source\repos\Testing_cgpaCalculator\obj\Debug\Testing_cgpaCalculator.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Testing_cgpaCalculator\obj\Debug\Testing_cgpaCalculator.csproj.CoreCompileInputs.cache

@@ -9,7 +9,7 @@ namespace CSharp_Concepts
     internal class Enums
     {
         public enum days { mon,tue,wed,thu,fri,sat,sun};
-        public static void testingEnum()
+        public static void Main(string[] args)
         {
             int a = (int)days.mon;
             Console.WriteLine(a);

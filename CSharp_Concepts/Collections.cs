@@ -3,7 +3,7 @@ namespace CSharp_Concepts
 {
     internal class Collections
     {
-        public static void collections_()
+        public static void Main(string[] args)
         {
             //list 
             var myList = new List<int>();

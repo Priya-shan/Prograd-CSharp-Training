@@ -4,7 +4,7 @@ namespace CSharp_Concepts
 {
     internal class Arrays
     {
-        public static void array_basics()
+        public static void Main(string[] args)
         {
             //One Dimensional Array
             int[] s = { 1, 2, 3, 4, 5, 6, };
