@@ -8,7 +8,7 @@ namespace CSharp_Concepts
 {
     internal class LinkedList
     {
-        public static void Linked_List()
+        public static void Main(string[] args)
         {
             var myLinkedList = new LinkedList<int>();
             var myLinkedList1 = new LinkedList<int>();
