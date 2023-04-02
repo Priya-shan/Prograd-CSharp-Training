@@ -10,7 +10,7 @@ namespace CSharp_Concepts
         public Generic(T message) {
             Console.WriteLine(message);
         }
-        public static void Main(string[] args)
+        public static void generic_()
         {
             Generic<int> g=new Generic<int>(1);
         }

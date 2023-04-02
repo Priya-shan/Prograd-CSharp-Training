@@ -8,7 +8,7 @@ namespace CSharp_Concepts
 {
     internal class Strings
     {
-       public static void Main(string[] args)
+       public static void string_manipulations()
         {
 
             string str = "priya";

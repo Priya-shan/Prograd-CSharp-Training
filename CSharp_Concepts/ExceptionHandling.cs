@@ -8,7 +8,7 @@ namespace CSharp_Concepts
 {
     internal class ExceptionHandling
     {
-        public static void Main(string[] args)
+        public static void exception_handling()
         {
             int a = 10;
             int b = 0;

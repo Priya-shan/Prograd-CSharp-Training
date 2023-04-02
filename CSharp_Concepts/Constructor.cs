@@ -4,7 +4,7 @@ namespace CSharp_Concepts
 {
     internal class Constructor
     {
-        public static void Main(string[] args)
+        public static void checking_constructor()
         {
             class1 obj = new class1();
 

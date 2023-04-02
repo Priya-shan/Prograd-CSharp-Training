@@ -11,7 +11,7 @@ namespace CSharp_Concepts
     delegate void DelegateForGreet();
     internal class LambdaExp
     {
-        public static void Main(string[] args)
+        public void testingLambda()
         {
             DelegateForLambda dl = (num1, num2) => num1 + num2;
             Console.WriteLine(dl.Invoke(20, 30));
@@ -50,7 +50,7 @@ namespace CSharp_Concepts
 
 
             //lambda fn to find all numbers divisible bu5 in list
-            List<int> list1 = new List<int>() { 1, 2, 10, 15, 3, 4, 5, 6, 7, 25,2};
+            List<int> list1 = new List<int>() { 1, 2, 10, 15, 3, 4, 5, 6, 7, 25 };
             List<int> divisibleBy5 = list1.FindAll(n => n % 5 == 0);
             foreach (var i in divisibleBy5)
             {
@@ -110,7 +110,7 @@ namespace CSharp_Concepts
             lst.Add(new user() { name = "sneha", id = 30, dept = "IT", age = 13, place = "mumbai" });
             lst.Add(new user() { name = "hema", id = 40, dept = "CSE", age = 35, place = "chennai" });
             lst.Add(new user() { name = "murugan", id = 50, dept = "mech", age = 38, place = "coimbatore" });
-            //printing the list
+            printing the list
             foreach (var v in lst)
             {
                 Console.WriteLine(v.name + " " + v.id + " " + v.dept + " " + v.age + " " + v.place);
@@ -133,10 +133,10 @@ namespace CSharp_Concepts
             {
                 Console.WriteLine(v.name + " " + v.id + " " + v.dept + " " + v.age + " " + v.place);
             }
-            //filetring out with 2 criteria age > 20 and dept = cse
-            //adding 1 to id in all objects
+            filetring out with 2 criteria age > 20 and dept = cse
+            adding 1 to id in all objects
             lst.ForEach(s => s.id += 1);
-            //sorting list without compareTo funtion
+            sorting list without compareTo funtion
             lst.Sort((s1, s2) => s1.age - s2.age);
             foreach (var v in lst)
             {
@@ -147,7 +147,7 @@ namespace CSharp_Concepts
                 Console.WriteLine(v.name + " " + v.id + " " + v.dept + " " + v.age + " " + v.place);
             }
 
-            //statement lambda -bigger expresion
+            statement lambda -bigger expresion
             var result = (int x, int y) =>
             {
                 int total = x + y;

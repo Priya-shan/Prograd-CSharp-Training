@@ -8,7 +8,7 @@ namespace CSharp_Concepts
 {
     internal class Dictionary
     {
-        public static void Main(string[] args)
+        public static void dictionary_()
         {
             Dictionary<int, string> d = new Dictionary<int, string>();
             d.Add(1, "priya");
