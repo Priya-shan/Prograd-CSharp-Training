@@ -10,7 +10,7 @@ namespace CSharp_Concepts
     delegate void DelegateForPrint();
     internal class AnonymousFunction
     {
-        public void testingAnonymousFn()
+        public static void Main(string[] args)
         {
             DelegateForMath dm = delegate (int a, int b) { int c = a + b; return c; };
             Console.WriteLine(dm(10, 16));
