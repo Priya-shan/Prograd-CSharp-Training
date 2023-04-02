@@ -1912,6 +1912,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "NUnit3TestAdapter": "4.4.2",
           "Oops": "1.0.0"
         },
         "compile": {
