@@ -8,7 +8,8 @@ namespace CSharp_Concepts
 {
     internal class StructBasics
     {
-        public static void struct_basics(){
+        public static void Main(string[] args)
+        {
             
         }
     }

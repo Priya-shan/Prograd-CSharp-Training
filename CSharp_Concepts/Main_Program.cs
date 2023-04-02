@@ -111,8 +111,8 @@ namespace CSharp_Concepts
 
 
             //..anonymous fnk
-            CSharp_Concepts.AnonymousFunction obj = new AnonymousFunction();
-            obj.testingAnonymousFn();
+            //CSharp_Concepts.AnonymousFunction obj = new AnonymousFunction();
+            //obj.testingAnonymousFn();
 
             //lambda function
             //HelloWorld.LambdaExp obj = new LambdaExp();
