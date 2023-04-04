@@ -33,7 +33,7 @@ namespace Practice_Problems
                     return false;
                 }
             }
-            return isSameSuit(ranks);
+            return true;
         }
 
         // Checking if all cards fall under same suit
@@ -101,7 +101,28 @@ namespace Practice_Problems
         //Three of a Kind -> Three cards of the same rank.
         bool isThreeOfAKind(string[] ranks)
         {
-            return cardSet.Count == 2 || cardSet.Count == 3;
+            Dictionary<string,int> dict = new Dictionary<string,int>();
+            int count = 0;
+            foreach (string i in ranks)
+            {
+                count = dict.GetValueOrDefault(i, 0);
+                if (dict.TryGetValue(i, out int currentAmount))
+                {
+                    dict[i] = count + 1;
+                }
+                else
+                {
+                    dict.Add(i, 1);
+                }
+            }
+            foreach (var kvp in dict)
+            {
+                if (kvp.Value == 3)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         //Two Pair -> Two different Pair. (10h 10c  11h 11c 8c )
@@ -122,7 +143,7 @@ namespace Practice_Problems
         }
         public static void Main(string[] args)
         {
-            string[] cards = { "10s", "10c", "8d", "10d", "10h" };
+            string[] cards = { "10h", "9h", "Qh", "Ah", "Kh" };
             string[] ranks = new string[cards.Length];
             string[] suits = new string[cards.Length];
 
@@ -142,13 +163,13 @@ namespace Practice_Problems
             }
 
             //Royal Flush -> A, K, Q, J, 10, all with the Same Suit.
-            if (obj.isRoyalFlush(ranks))
+            if (obj.isRoyalFlush(ranks) && obj.isSameSuit(suits))
             {
                 Console.WriteLine("RoyalFlush");
             }
 
             //Straight Flush -> Five cards in sequence, all with the Same Suit.
-            else if (obj.isSameSuit(ranks) && obj.isSequenced(ranks))
+            else if (obj.isSameSuit(suits) && obj.isSequenced(ranks))
             {
                 Console.WriteLine("Straight Flush");
             }
@@ -166,7 +187,7 @@ namespace Practice_Problems
             }
 
             //Flush -> Any five cards of the Same Suit, not in sequence.
-            else if (obj.isSameSuit(ranks))
+            else if (obj.isSameSuit(suits))
             {
                 Console.WriteLine("Flush");
             }
