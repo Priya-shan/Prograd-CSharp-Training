@@ -43,7 +43,8 @@ TranslateSentence("I like to eat honey waffles.") ➞ "Iyay ikelay otay eatyay o
 TranslateSentence("Do you think it is going to rain today?") ➞ "Oday ouyay inkthay ityay isyay oinggay otay ainray odaytay?"
 Notes
 Regular expressions will help you not mess up the punctuation in the sentence.
-If the original word or sentence starts with a capital letter, the translation should preserve its case (see examples #2, #5 and #6).
+If the original word or sentence starts with a capital letter, the translation should preserve 
+its case (see examples #2, #5 and #6).
  */
 namespace Practice_Problems
 {
