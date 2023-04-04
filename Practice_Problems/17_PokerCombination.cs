@@ -19,9 +19,10 @@ namespace Practice_Problems
 {
     internal class PokerCombination
     {
-        // cardSet is used in -> isFullHouse, isThreeofAKind, ispair
+        // cardSet is used in -> isFullHouse, ispair
         HashSet<string> cardSet = new HashSet<string>();
-
+        // dict is used in  -> Three of a Kind, Four of a Kind
+        Dictionary<string, int> dict = new Dictionary<string, int>();
         //Royal Flush -> A, K, Q, J, 10, all with the Same Suit.
         bool isRoyalFlush(string[] ranks)
         {
@@ -84,10 +85,12 @@ namespace Practice_Problems
         //Four of a Kind -> Four cards of the same rank.
         bool isFourOfAKind(string[] ranks)
         {
-            Array.Sort(ranks);
-            if (ranks[4] != ranks[3] && ranks[3] == ranks[0])
+            foreach (var kvp in dict)
             {
-                return true;
+                if (kvp.Value == 4)
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -101,20 +104,6 @@ namespace Practice_Problems
         //Three of a Kind -> Three cards of the same rank.
         bool isThreeOfAKind(string[] ranks)
         {
-            Dictionary<string,int> dict = new Dictionary<string,int>();
-            int count = 0;
-            foreach (string i in ranks)
-            {
-                count = dict.GetValueOrDefault(i, 0);
-                if (dict.TryGetValue(i, out int currentAmount))
-                {
-                    dict[i] = count + 1;
-                }
-                else
-                {
-                    dict.Add(i, 1);
-                }
-            }
             foreach (var kvp in dict)
             {
                 if (kvp.Value == 3)
@@ -143,7 +132,7 @@ namespace Practice_Problems
         }
         public static void Main(string[] args)
         {
-            string[] cards = { "10h", "9h", "Qh", "Ah", "Kh" };
+            string[] cards = { "5h", "5c", "5s", "9h", "5d" };
             string[] ranks = new string[cards.Length];
             string[] suits = new string[cards.Length];
 
@@ -161,7 +150,20 @@ namespace Practice_Problems
             {
                 obj.cardSet.Add(rank);
             }
-
+            //adding dictionary values
+            int count = 0;
+            foreach (string i in ranks)
+            {
+                count = obj.dict.GetValueOrDefault(i, 0);
+                if (obj.dict.TryGetValue(i, out int currentAmount))
+                {
+                    obj.dict[i] = count + 1;
+                }
+                else
+                {
+                    obj.dict.Add(i, 1);
+                }
+            }
             //Royal Flush -> A, K, Q, J, 10, all with the Same Suit.
             if (obj.isRoyalFlush(ranks) && obj.isSameSuit(suits))
             {
