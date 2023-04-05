@@ -24,7 +24,7 @@ namespace Practice_Problems
         // dict is used in  -> Three of a Kind, Four of a Kind
         Dictionary<string, int> dict = new Dictionary<string, int>();
         //Royal Flush -> A, K, Q, J, 10, all with the Same Suit.
-        bool isRoyalFlush(string[] ranks)
+        bool IsRoyalFlush(string[] ranks)
         {
             string[] req_ranks = { "A","K","Q","J","10"};
             foreach(string rank in ranks)
@@ -38,7 +38,7 @@ namespace Practice_Problems
         }
 
         // Checking if all cards fall under same suit
-        bool isSameSuit(string[] suits)
+        bool IsSameSuit(string[] suits)
         {
             string firstValue = suits[0];
             foreach (string suit in suits)
@@ -52,7 +52,7 @@ namespace Practice_Problems
         }
 
         //Checking if cards are in sequence
-        bool isSequenced(string[] ranks)
+        bool IsSequenced(string[] ranks)
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             dict.Add("J", 11);
@@ -83,7 +83,7 @@ namespace Practice_Problems
         }
 
         //Four of a Kind -> Four cards of the same rank.
-        bool isFourOfAKind(string[] ranks)
+        bool IsFourOfAKind()
         {
             foreach (var kvp in dict)
             {
@@ -94,15 +94,17 @@ namespace Practice_Problems
             }
             return false;
         }
+        // 1 1 1 2 2 -> 2
+        // 1 2 -> 2
 
         //Full House -> Three of a Kind with a Pair.
-        bool isFullHouse(string[] ranks)
+        bool IsFullHouse()
         {
             return cardSet.Count == 2;
         }
 
         //Three of a Kind -> Three cards of the same rank.
-        bool isThreeOfAKind(string[] ranks)
+        bool IsThreeOfAKind(string[] ranks)
         {
             foreach (var kvp in dict)
             {
@@ -115,24 +117,37 @@ namespace Practice_Problems
         }
 
         //Two Pair -> Two different Pair. (10h 10c  11h 11c 8c )
-        bool isTwoPair(string[] ranks)
+        // 10 11 8 
+        // 1 1 1 2 3 
+        // 10 - 2, 11-2 , 8 -1
+        bool IsTwoPair(string[] ranks)
         {
-            Array.Sort(ranks);
-            if (ranks[0] == ranks[1] && ranks[2] == ranks[3] && ranks[3]!= ranks[4])
+            //Array.Sort(ranks);
+            //if (ranks[0] == ranks[1] && ranks[2] == ranks[3] && ranks[3]!= ranks[4])
+            //{
+            //    return true;
+            //}
+            int count = 0;
+            foreach (var kvp in dict)
             {
-                return true;
+                if (kvp.Value == 2)
+                {
+                    count++;
+                }
             }
-            return false;
+            return count==2;
         }
 
         //Pair -> Two cards of the same rank.
-        bool isPair(string[] ranks)
+        // 1 1 2 3 4 
+        bool IsPair(string[] ranks)
         {
             return cardSet.Count == 4;
         }
         public static void Main(string[] args)
         {
-            string[] cards = { "5h", "5c", "5s", "9h", "5d" };
+            string[] cards = { "10h", "Jh", "Qh", "Ah", "Kh" };
+            // 5-4,9-1
             string[] ranks = new string[cards.Length];
             string[] suits = new string[cards.Length];
 
@@ -165,54 +180,54 @@ namespace Practice_Problems
                 }
             }
             //Royal Flush -> A, K, Q, J, 10, all with the Same Suit.
-            if (obj.isRoyalFlush(ranks) && obj.isSameSuit(suits))
+            if (obj.IsRoyalFlush(ranks) && obj.IsSameSuit(suits))
             {
                 Console.WriteLine("RoyalFlush");
             }
 
             //Straight Flush -> Five cards in sequence, all with the Same Suit.
-            else if (obj.isSameSuit(suits) && obj.isSequenced(ranks))
+            else if (obj.IsRoyalFlush(suits) && obj.IsSameSuit(ranks))
             {
                 Console.WriteLine("Straight Flush");
             }
 
             //Four of a Kind -> Four cards of the same rank.
-            else if (obj.isFourOfAKind(ranks))
+            else if (obj.IsFourOfAKind())
             {
                 Console.WriteLine("Four Of A Kind");
             }
 
             //Full House -> Three of a Kind with a Pair.
-            else if (obj.isFullHouse(ranks))
+            else if (obj.IsFullHouse())
             {
                 Console.WriteLine("Full House");
             }
 
             //Flush -> Any five cards of the Same Suit, not in sequence.
-            else if (obj.isSameSuit(suits))
+            else if (obj.IsSameSuit(suits))
             {
                 Console.WriteLine("Flush");
             }
 
             //Straight -> Five cards in a sequence, but not of the same suit.
-            else if (obj.isSequenced(ranks))
+            else if (obj.IsSequenced(ranks))
             {
                 Console.WriteLine("Straight");
             }
 
             //Three of a Kind -> Three cards of the same rank.
-            else if (obj.isThreeOfAKind(ranks))
+            else if (obj.IsThreeOfAKind(ranks))
             {
                 Console.WriteLine("Three Of A Kind");
             }
 
             //Two Pair -> Two different Pair. 
-            else if (obj.isTwoPair(ranks))
+            else if (obj.IsTwoPair(ranks))
             {
                 Console.WriteLine("Two pair");
             }
             //Pair -> Two cards of the same rank.
-            else if (obj.isPair(ranks))
+            else if (obj.IsPair(ranks))
             {
                 Console.WriteLine("Pair");
             }
