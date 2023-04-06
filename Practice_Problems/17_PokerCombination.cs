@@ -104,7 +104,7 @@ namespace Practice_Problems
         }
 
         //Three of a Kind -> Three cards of the same rank.
-        bool IsThreeOfAKind(string[] ranks)
+        bool IsThreeOfAKind()
         {
             foreach (var kvp in dict)
             {
@@ -120,7 +120,7 @@ namespace Practice_Problems
         // 10 11 8 
         // 1 1 1 2 3 
         // 10 - 2, 11-2 , 8 -1
-        bool IsTwoPair(string[] ranks)
+        bool IsTwoPair()
         {
             //Array.Sort(ranks);
             //if (ranks[0] == ranks[1] && ranks[2] == ranks[3] && ranks[3]!= ranks[4])
@@ -216,13 +216,13 @@ namespace Practice_Problems
             }
 
             //Three of a Kind -> Three cards of the same rank.
-            else if (obj.IsThreeOfAKind(ranks))
+            else if (obj.IsThreeOfAKind())
             {
                 Console.WriteLine("Three Of A Kind");
             }
 
             //Two Pair -> Two different Pair. 
-            else if (obj.IsTwoPair(ranks))
+            else if (obj.IsTwoPair())
             {
                 Console.WriteLine("Two pair");
             }
