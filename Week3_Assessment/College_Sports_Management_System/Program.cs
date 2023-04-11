@@ -58,11 +58,11 @@ namespace College_Sports_Management_System
                         string option= Console.ReadLine();
                         if (option.Equals("I"))
                         {
-                            obj.individual_Registration("solo");
+                            obj.individual_Registration();
                         }
                         else
                         {
-                            obj.group_Registration("group");
+                            obj.group_Registration();
                         }
                         break;
 
@@ -231,6 +231,72 @@ namespace College_Sports_Management_System
             Console.WriteLine("\n\nValues Updated Successfully..!!");
             display_table("Scoreboard");
         }
+        public void individual_Registration()
+        {
+            Console.WriteLine("Ok.. ENtering In Module");
+            display_table("Scoreboard");
+
+            SqlConnection conn = new SqlConnection(conn_string);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+
+            Console.WriteLine("\n\nNow Enter the tournament id to which you have to update score");
+            Console.Write("Enter Tournament_id :");
+            int tourn_id = Convert.ToInt32(Console.ReadLine());
+
+            string query = $"SELECT * FROM Scoreboard where tournament_id={tourn_id}";
+            command.CommandText = query;
+            SqlDataReader reader = command.ExecuteReader();
+            Console.WriteLine($"\nThe data you are trying to update...\n");
+            string team1_name = "";
+            string team2_name = "";
+
+            Console.WriteLine("\n--------------------------------------------------------------------------------------");
+            while (reader.Read())
+            {
+                Console.Write(reader.GetInt32(0) + "\t");
+                Console.Write(reader.GetInt32(1) + "\t");
+                Console.Write(reader.GetInt32(2) + "\t");
+                team1_name = reader.GetString(3);
+                Console.Write(team1_name + "\t");
+                team2_name = reader.GetString(4);
+                Console.Write(team2_name + "\t");
+                Console.Write(reader.GetInt32(5) + "\t");
+                Console.Write(reader.GetInt32(6) + "\t");
+                Console.Write(reader.GetString(7) + "\t");
+            }
+            reader.Close();
+            Console.WriteLine("\n--------------------------------------------------------------------------------------");
+
+
+            Console.Write($"\nEnter {team1_name} Score:");
+            int team1_score = Convert.ToInt32(Console.ReadLine());
+            Console.Write($"Enter {team2_name} Score:");
+            int team2_score = Convert.ToInt32(Console.ReadLine());
+            string result = "";
+            if (team1_score > team2_score)
+            {
+                result = team1_name;
+            }
+            else
+            {
+                result = team2_name;
+            }
+
+            query = $"update Scoreboard set t1_score={team1_score}, t2_score={team2_score}, result='{result}' where tournament_id={tourn_id}";
+
+            command.CommandText = query;
+            command.ExecuteReader();
+
+            conn.Close();
+            Console.WriteLine("\n\nValues Updated Successfully..!!");
+            display_table("Scoreboard");
+        }
+        public void group_Registration()
+        {
+
+        }
+        
         public void remove(string table_name,string column_name)
         {
             Console.WriteLine($"Ok.. ENtering Remove {table_name} Module");

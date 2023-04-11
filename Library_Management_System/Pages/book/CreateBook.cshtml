@@ -1,0 +1,98 @@
+﻿@page
+@model WebApplication2.Pages.book.CreateBookModel
+@{
+}
+<div>
+    <h1 style="text-align:center">Add a New Book</h1>
+    <br /><br />
+    @if (Model.ErrorMessage.Length > 0)
+    {
+        <div id="error-div" style="position:relative;width:900px;height:100px;text-align:center; margin:0 auto;">
+            <button style="position:absolute;top:0; right:0;" type="button" class="btn-close"
+                    onclick="getElementById('error-div').remove();">
+            </button>
+            <p class="alert-danger">@Model.ErrorMessage</p>
+        </div>
+    }
+    @if (Model.SuccessMessage.Length > 0)
+    {
+         <div id="success-div" style="position:relative;width:900px;height:100px;text-align:center; margin:0 auto;">
+            <button style="position:absolute;top:0; right:0;" type="button" class="btn-close"
+                    onclick="getElementById('success-div').remove();">
+            </button>
+            <p class="alert-success">@Model.SuccessMessage</p>
+        </div>
+    }
+    <form method="post" style="text-align:center">
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Book Code</label>
+            <div class="col-xl-4">
+                <input type="text" class="form-control" name="book_code" value=""/>
+            </div>
+        </div>
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Book Title</label>
+            <div class="col-xl-4">
+                <input type="text" class="form-control" name="book_title" value="" />
+            </div>
+        </div>
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Category</label>
+            <div class="col-xl-4">
+                <input type="text" class="form-control" name="category" value="" />
+            </div>
+        </div>
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Author</label>
+            <div class="col-xl-4">
+                <input type="text" class="form-control" name="author" value="" />
+            </div>
+        </div>
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Publication</label>
+            <div class="col-xl-4">
+                <input type="text" class="form-control" name="publication" value="" />
+            </div>
+        </div>
+        @* <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Publish Date</label>
+            <div class="col-xl-4">
+                <input type="date" class="form-control" name="publish_date" value="" />
+            </div>
+        </div>*@
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Price</label>
+            <div class="col-xl-4">
+                <input type="number" class="form-control" name="price" value="" />
+            </div>
+        </div>
+        
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Remaining Quantity</label>
+            <div class="col-xl-4">
+                <input type="number" class="form-control" name="rem_quantity" value="" />
+            </div>
+        </div>
+
+        <div class=" row mb-3">
+            <div class="col-xl-1"></div>
+            <label class=" col-xl-4 col-form-label" style="font-size:22px">Sold Out Quantity</label>
+            <div class="col-xl-4">
+                <input type="number" class="form-control" name="sold_quantity" value="" />
+            </div>
+        </div>
+
+        <input type="submit" class="btn-primary"/>
+        <a href="/" class="btn-danger" style="padding:5px 10px;text-decoration:none" >Cancel</a>
+    </form>
+   
+
+</div>

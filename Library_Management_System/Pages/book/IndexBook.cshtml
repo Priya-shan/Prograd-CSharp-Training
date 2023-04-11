@@ -1,0 +1,86 @@
+﻿@page
+@model WebApplication2.Pages.book.IndexModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/book.css" />
+</head>
+<br>
+<div class="container">
+    <h1 style="text-align:center">List of Books Available !</h1>
+        @*<div>
+    <a class="btn-primary" href="/book/CreateBook"> Create New Book</a>
+    </div>*@
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Code</th>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Publication</th>
+                <th>Price</th>
+                <th>Remaining</th>
+                <th>Sold</th>
+                <th><button type="button" class="btn-primary" onclick="window.location.href = '/book/CreateBook';" style="border-radius:8px">Add New Book</button></th>
+
+            </tr>
+        </thead>
+        <tbody>
+                @*@if (Model.editMode){*@
+                @foreach (var book in Model.booksList)
+                {
+                    @if (Model.book_id.Equals(book.book_code))
+                    {
+                    <form method="post">
+                    <tr>
+                        <td><input type="text" name="book_code1" value="@book.book_code" disabled style="width:80px"></td>
+                        <input type="hidden" name="book_code" value="@book.book_code">
+                        <td><input type="text" name="book_titlee" value="@book.book_title"></td>
+
+                        <td><input type="text" name="book_author" value="@book.author" style="width:130px"></td>
+                        <td><input type="text" name="book_category" value="@book.category" style="width:70px"></td>
+                        <td><input type="text" name="book_publication" value="@book.publication" style="width:130px"></td>
+                        <td><input type="text" name="book_price" value="@book.price" style="width:60px"></td>
+                        <td><input type="text" name="book_rem_quantity" value="@book.rem_quantity" style="width:40px"></td>
+                        <td><input type="text" name="book_sold_quantity" value="@book.sold_quantity" style="width:40px"></td>
+                        <td>
+                            <button type="submit" class="btn-success" style="border-radius:8px">Save</button>
+                            <a href="IndexBook"><button type="button" class="btn-danger" style="border-radius:8px">Cancel</button></a>
+                        </td>
+                    </tr>
+                    </form>
+                    }
+                    else
+                    {
+                    <tr>
+                        <td>@book.book_code</td>
+                        <td>@book.book_title</td>
+                        <td>@book.author</td>
+                        <td>@book.category</td>
+                        <td>@book.publication</td>
+                        <td>@book.price</td>
+                        <td>@book.rem_quantity</td>
+                        <td>@book.sold_quantity</td>
+                        <td>
+                            <a href="UpdateBook?BookCode=@book.book_code">
+                                <button type="button" class="btn-secondary" style="border-radius:8px">Edit</button>
+                            </a>
+
+                            <a href="IndexBook?opnMode=delete&BookCode=@book.book_code">
+                                <button type="button" class="btn-danger" style="border-radius:8px">Delete</button>
+                            </a>
+
+                        </td>
+                    </tr>
+                    }
+
+                }
+                @*}*@
+        </tbody>
+    </table>
+    </br>
+
+@*<p>@IndexModel.str</p>*@
+</div>
