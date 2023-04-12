@@ -7,11 +7,20 @@ namespace MVC_WebApllication.Controllers
     public class StudentController : Controller
     {
         public List<StudentModel> student_lst = new List<StudentModel>();
+        IConfiguration configuration;
+        public StudentController(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
         public IActionResult Index()
         {
-            
-            string conn_string = "Data Source=DESKTOP-KN3OCS1;Initial Catalog=Practice_SQL;Integrated Security=True;Encrypt=False";
-            SqlConnection conn = new SqlConnection(conn_string);
+
+            //ConfigurationManager manager = new ConfigurationManager();
+            //string conn_string = "Data Source=DESKTOP-KN3OCS1;Initial Catalog=Practice_SQL;Integrated Security=True;Encrypt=False";
+            //SqlConnection conn = new SqlConnection(conn_string);
+            string conn_string = configuration.GetConnectionString("StudentDB");
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conn_string;
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             string query = "select * from StudentDetails1";
@@ -26,6 +35,7 @@ namespace MVC_WebApllication.Controllers
                 sm.dept = reader.GetInt32(2);
                 student_lst.Add(sm);
             }
+            conn.Close();
             return View(student_lst);
         }
 
