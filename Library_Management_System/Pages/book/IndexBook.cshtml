@@ -68,9 +68,11 @@
                                 <button type="button" class="btn-secondary" style="border-radius:8px">Edit</button>
                             </a>
 
-                            <a href="IndexBook?opnMode=delete&BookCode=@book.book_code">
+                            @*<a href="IndexBook?opnMode=delete&BookCode=@book.book_code">
                                 <button type="button" class="btn-danger" style="border-radius:8px">Delete</button>
-                            </a>
+                            </a>*@
+
+                            <button type="button" class="btn-danger" onclick="onDelete('@book.book_code')" style="border-radius:8px">Delete</button>
 
                         </td>
                     </tr>

@@ -23,7 +23,9 @@ namespace WebApplication2.Pages.book
             try
             {
                 if (operationMode != null && operationMode.Equals("delete"))
+
                 {
+
                     SqlConnection conn1 = new SqlConnection(conn_string);
                     conn1.Open();
                     string query1 = $"delete from PS_lms_booklist where book_code='{book_id_to_delete}'";

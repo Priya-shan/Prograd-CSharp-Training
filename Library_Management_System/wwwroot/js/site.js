@@ -2,3 +2,10 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+function onDelete(id) {
+    console.log("in js");
+    if (confirm("Are you sure you want to delete ID = " + id + "?")) {
+        location.replace("IndexBook?opnMode=delete&BookCode="+id);
+    }
+}
