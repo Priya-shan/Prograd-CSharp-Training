@@ -6,7 +6,22 @@
 }
 @model List<StudentModel>;
 <div>
-    List of students
+    <div class="container">
+        <h1 style="text-align:center">List of Books Available !</h1>
+        @*<div>
+        <a class="btn-primary" href="/book/CreateBook"> Create New Book</a>
+        </div>*@
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student Id</th>
+                    <th>Student Name</th>
+                    <th>Dept ID</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
     @foreach (StudentModel book in Model)
     {
         <tr>
@@ -15,6 +30,5 @@
         <td>@book.dept</td>
         </tr>
     }
-
-    }
+            </tbody>
 </div>
