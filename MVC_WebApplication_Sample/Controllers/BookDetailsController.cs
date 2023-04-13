@@ -74,7 +74,21 @@ namespace MVC_WebApplication_Sample.Controllers
             conn.Close();
 
         }
+        public void UpdateBook(int id,BookModel Book)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("edit_book_withID", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.AddWithValue("@book_code", Book.book_code);
+            cmd.Parameters.AddWithValue("@book_title", Book.book_title);
+            cmd.Parameters.AddWithValue("@category", Book.category);
+            cmd.Parameters.AddWithValue("@author", Book.author);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+        }
         // GET: BookDetailsController
         public ActionResult Index()
         {
@@ -120,10 +134,12 @@ namespace MVC_WebApplication_Sample.Controllers
         // POST: BookDetailsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, BookModel Book)
         {
             try
             {
+                Console.WriteLine("edit post");
+                UpdateBook(id, Book);
                 return RedirectToAction(nameof(Index));
             }
             catch
