@@ -14,7 +14,8 @@ namespace MVC_WebApllication.Controllers
         }
         public IActionResult Index()
         {
-
+            //FETCHING ASPNETCORE ENVIRONMENT
+            Console.WriteLine("Environment : " + configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT"));
             //ConfigurationManager manager = new ConfigurationManager();
             //string conn_string = "Data Source=DESKTOP-KN3OCS1;Initial Catalog=Practice_SQL;Integrated Security=True;Encrypt=False";
             //SqlConnection conn = new SqlConnection(conn_string);

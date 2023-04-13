@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<head>
+    <style>
+        a{
+            text-decoration:none;
+        }
+    </style>
+</head>
+<div class="container">
+    <h1 style="text-align:center">List of Books Available !</h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Job ID</th>
+                <th>Job Title</th>
+                <th>Job Category</th>
+                <th>Job Desc</th>
+                <th>Salary</th>
+                <th>Company</th>
+                
+                <th><button type="button" class="btn-primary" onclick="window.location.href = '/Admin/AddJob';" style="border-radius:8px">Add Job</button></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (JobDetails job in @ViewBag.job_list)
+            {
+                @if ((job.job_id) == (@ViewBag.job_id_to_edit))
+                {
+                    <form method="post">
+                    <tr>
+                        <td><input type="text" name="job_id" value="@job.job_id" disabled style="width:80px"></td>
+                        <input type="hidden" name="job_id" value="@job.job_id">
+                        <td><input type="text" name="job_name" value="@job.job_name"></td>
+
+                        <td><input type="text" name="job_category" value="@job.job_category" style="width:150px"></td>
+                        <td><input type="text" name="job_desc" value="@job.job_desc" style="width:190px"></td>
+                        <td><input type="text" name="salary" value="@job.salary" style="width:80px"></td>
+                        <td><input type="text" name="company_name" value="@job.company_name" style="width:80px"></td>
+                        <td>
+                            <button type="submit" class="btn-success" style="border-radius:8px">Save</button>
+                            <a href="/Admin/Index?opnMode=cancel"><button type="button" class="btn-danger" style="border-radius:8px">Cancel</button></a>
+                        </td>
+                    </tr>
+                    </form>
+                }
+                else
+                {
+                    <tr>
+                        <td>@job.job_id</td>
+                        <td>@job.job_name</td>
+                        <td>@job.job_category</td>
+                        <td>@job.job_desc</td>
+                        <td>@job.salary</td>
+                        <td>@job.company_name</td>
+                        <td>
+                            <a href="/Admin/UpdateJob?opnMode=edit&JobId=@job.job_id">
+                                <button type="button" class="btn-secondary" style="border-radius:8px">Edit</button>
+                            </a>
+                            <button type="button" class="btn-danger" onclick="onDelete(@job.job_id)" style="border-radius:8px">Delete</button>
+                        </td>
+                    </tr>
+               }
+            }
+        </tbody>
+    </table>
+    </br>
+</div>

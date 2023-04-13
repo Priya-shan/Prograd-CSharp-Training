@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVC_WebApplication_Sample.Models.BookModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.book_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.book_title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.author)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.book_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.book_title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.book_code}) |
+                    @Html.ActionLink("Details", "Details", new { id=item.book_code}) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.book_code})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

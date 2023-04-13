@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+    <style>
+        .btn-primary{
+            border-radius:5px;
+        }
+    </style>
+</head>
+<div>
+    <div class="row mb3">
+        <div class="col xl-4">
+            <form method="post">
+                <input type="hidden" type="text" name="form_name" value="job_search_form" />
+                <input type="text" name="search_by_job_input" placeholder="Enter Job Name..." />
+                <button type="submit" class="btn-primary" name="search_by_job_btn">Search</button>
+            </form>
+        </div>
+        <div class="col xl-4">
+            <form method="post">
+                <input type="hidden" type="text" name="form_name" value="salary_search_form" />
+                <input type="number" name="search_by_salary_min_input" placeholder="Enter Minimum Salary..." />
+                <input type="number" name="search_by_salary_max_input" placeholder="Enter Maximum Salary..." />
+                <button type="submit" class="btn-primary" name="search_by_salary_btn">Search</button>
+            </form>
+        </div>
+
+        <div class="col xl-4">
+            <form method="post">
+                <input type="hidden" type="text" name="form_name" value="company_search_form" />
+                <input type="text" name="search_by_company_input" placeholder="Enter Company Name..." />
+                <button type="submit" class="btn-primary" name="search_by_company_btn">Search</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <h1 style="text-align:center"></h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Job ID</th>
+                <th>Job Title</th>
+                <th>Job Category</th>
+                <th>Job Desc</th>
+                <th>Salary</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (JobDetails job in @ViewBag.job_list){
+            <tr>
+                <td>@job.job_id</td>
+                <td>@job.job_name</td>
+                <td>@job.job_category</td>
+                <td>@job.job_desc</td>
+                <td>@job.salary</td>
+                <td>@job.company_name</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    </br>
+</div>
