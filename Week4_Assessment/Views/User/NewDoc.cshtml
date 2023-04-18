@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Text_Editor.Models.DocumentsModel
+@{
+}
+
+<div class="row">
+    <div class="col-xl-11"></div>
+    <div class="col-xl-2">
+        
+        <button class="btn-primary" style="margin-left:980px">Download</button>
+    </div>
+    
+</div>
+<div class="row" style="margin-top:10px">
+    <form asp-action="NewDoc">
+        <input asp-for="doc_title" style="width:1100px" type=" text" name="doc_title" placeholder="Your Document title goes here..."></input>
+        <textarea asp-for="doc_content" style="width:1100px;height:380px" name="doc_content">
+
+        </textarea>
+        <button class="btn-success" style="margin-left:950px">Save Changes</button>
+
+    </form>
+    
+</div>
