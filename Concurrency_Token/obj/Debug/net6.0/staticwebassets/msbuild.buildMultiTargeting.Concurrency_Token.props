@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Concurrency_Token.props" />
+</Project>
