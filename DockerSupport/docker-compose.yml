@@ -1,0 +1,30 @@
+version: '3.4'
+networks:
+    docker_example_nw1:
+services:
+    docker_example_db1:
+        container_name: demo_docker_db1
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        ports:
+            - 8002:1433
+        environment: 
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=P@ssw0rd12345
+        networks:
+            - docker_example_nw1
+    dockersupport:
+        container_name: demo_docker_example1
+        image: ${DOCKER_REGISTRY-}dockersupport
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 8001:80
+        depends_on:
+            - docker_example_db1
+        environment:
+            - DB_HOST=docker_example_db
+            - DB_NAME=DBforDockerExample
+            - DB_SA_PASSWORD=P@ssw0rd12345
+        networks:
+            - docker_example_nw1

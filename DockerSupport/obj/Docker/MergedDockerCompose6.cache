@@ -1,0 +1,39 @@
+networks:
+  docker_example_nw1: {}
+services:
+  docker_example_db1:
+    container_name: demo_docker_db1
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: P@ssw0rd12345
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      docker_example_nw1: {}
+    ports:
+    - published: 8002
+      target: 1433
+  dockersupport:
+    build:
+      context: C:\Users\HP\source\repos\DockerSupport
+      dockerfile: Dockerfile
+    container_name: demo_docker_example1
+    depends_on:
+      docker_example_db1:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DB_HOST: docker_example_db
+      DB_NAME: DBforDockerExample
+      DB_SA_PASSWORD: P@ssw0rd12345
+    image: dockersupport
+    networks:
+      docker_example_nw1: {}
+    ports:
+    - published: 8001
+      target: 80
+    - target: 80
+    volumes:
+    - C:\Users\HP\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\HP\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
