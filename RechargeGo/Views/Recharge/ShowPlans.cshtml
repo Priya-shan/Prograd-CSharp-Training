@@ -1,0 +1,104 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Object>
+
+@{
+   }
+   <h2 style="text-align:center">Available Plans</h2>
+   <br />
+
+<nav>
+    @if(ViewBag.PlanNames != null){
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            @foreach (string name in ViewBag.PlanNames)
+            {
+                <button class="nav-link" id="nav-@name.Replace(" ","")-tab" data-bs-toggle="tab" data-bs-target="#nav-@name.Replace(" ","")" type="button" role="tab" aria-controls="nav-@name.Replace(" ","")" aria-selected="true">@name</button>
+
+            }
+        </div>
+    }
+    
+</nav>
+
+    <div class="tab-content" id="nav-tabContent">
+        @foreach (var kvp in ViewBag.PlansDictionary)
+        {
+
+            <div class="tab-pane fade show active" id="nav-@kvp.Key" role="tabpanel" aria-labelledby="nav-@kvp.Key-tab">
+                @*@kvp.Key*@
+                @foreach (var item in kvp.Value)
+                {
+                <br />
+                    <div class="card">
+                        <div class="card-header" >
+                        @item.operator_name - @item.category
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title"><pre>INR.₹@item.amount          @item.data         @item.validity</pre></h5>
+                        <p class="card-text">Claim Now to enjoy @item.data of uninterrupted data for @item.validity at Rupees @item.amount</p>
+                            @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                        <a class="btn btn-success" asp-action="Claim" asp-route-id="@item.plan_id" asp-route-amount="@item.amount">Claim</a>
+                        </div>
+                    </div>
+                    
+                    
+                }
+            </div>
+        }
+    </div>
+@*<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-CricketPlans" role="tabpanel" aria-labelledby="nav-CricketPlans-tab">heeelo</div>
+    <div class="tab-pane fade" id="nav-DataAddOn" role="tabpanel" aria-labelledby="nav-DataAddOn-tab">hii</div>
+</div>
+*@
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.operator_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.validity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.operator_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.validity)
+                </td>
+                <td>
+                    <a class="butt" asp-action="Claim" asp-route-id="@item.plan_id">Claim</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+*@

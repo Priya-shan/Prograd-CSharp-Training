@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+    <style>
+        .payment-container {
+            margin-top:50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-text {
+            text-align: center;
+        }
+
+        .payment-btn,
+        .cancel-btn {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #4CAF50;
+            cursor: pointer;
+            font-weight:bold;
+        }
+
+        .qr-code {
+            margin: 20px;
+        }
+    </style>
+</head>
+<div class="payment-container">
+    <div class="payment-text">
+        <h3>Scan this QR to complete payment</h3>
+        <h3>Amount: @ViewBag.amountToPay INR</h3>
+        <div class="qr-code">
+            <img src="https://www.vhv.rs/dpng/d/414-4148085_qr-code-png-transparent-free-qr-code-png.png" width="200px" height="200px" alt="QR Code">
+        </div>
+        <form asp-action="paymentDone">
+            <button type="submit" name="paid" class="payment-btn">Complete</button>
+        </form>
+        <form asp-action="PaymentFailed">
+            <button type="submit" name="cancel" class="cancel-btn">Cancel</button>
+        </form>
+        
+        
+    </div>
+    
+</div>

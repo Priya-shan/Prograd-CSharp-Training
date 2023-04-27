@@ -1,0 +1,112 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    
+}
+<head>
+    <style>
+        .recharge-form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="tel"],
+        select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .validation-message {
+            color: red;
+            display: none;
+        }
+
+        #next-btn {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+
+        select:invalid {
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body onload="disableAddPlan(@ViewBag.disableAddPlan)">
+    <br />
+    <div class="recharge-form">
+        <h2>Mobile Recharge</h2>
+        <form asp-action="ShowPlans">
+            <label for="name">Enter Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name">
+
+            <label for="mobile-number">Enter Mobile Number:</label>
+            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter mobile number">
+            <p class="validation-message">Please enter a valid mobile number</p>
+            <label for="operator">Operator:</label>
+            <select id="operator" name="operator">
+                <option value="" selected disabled>Please select an operator</option>
+                @foreach (var item in ViewBag.OperatorNames)
+                {
+                    <option value=@item>@item</option>
+                }
+            </select>
+
+            <button class="butt" type="submit">NEXT</button>
+        </form>
+
+    </div>
+</body>
+<script>
+    function disableAddPlan(flag){
+        console.log("int fn");
+        if (flag) {
+            console.log("disable add plan");
+            document.getElementById("nav-addplan").style.display="none";
+        }
+        else{
+            console.log("disable add plan false");
+        }
+    }
+</script>
