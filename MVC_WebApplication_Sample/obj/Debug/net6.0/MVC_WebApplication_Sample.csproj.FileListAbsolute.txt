@@ -267,3 +267,5 @@ C:\Users\HP\source\repos\MVC_WebApplication_Sample\bin\Debug\net6.0\runtimes\win
 C:\Users\HP\source\repos\MVC_WebApplication_Sample\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\HP\source\repos\MVC_WebApplication_Sample\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\HP\source\repos\MVC_WebApplication_Sample\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\HP\source\repos\MVC_WebApplication_Sample\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\HP\source\repos\MVC_WebApplication_Sample\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
