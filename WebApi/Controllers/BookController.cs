@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Text;
 using WebApi.Models;
 using static System.Reflection.Metadata.BlobBuilder;
 
@@ -23,6 +24,10 @@ namespace WebApi.Controllers
         [HttpGet]
         public IActionResult GetBooks()
         {
+            //return new HttpResponseMessage()
+            //{
+            //    Content = new StringContent("Hello", Encoding.UTF8, "application/json")
+            //};
             List<BookDetailsModel> booksList = new List<BookDetailsModel>();
             try
             {
@@ -32,7 +37,7 @@ namespace WebApi.Controllers
 
                 SqlDataReader Reader = cmd.ExecuteReader();
                 while (Reader.Read())
-                { 
+                {
                     BookDetailsModel book = new BookDetailsModel();
                     book.book_code = Reader.GetString(0);
                     book.book_title = Reader.GetString(1);
@@ -51,7 +56,8 @@ namespace WebApi.Controllers
             {
                 Console.WriteLine(se.Message);
             }
-            return Ok(booksList);   
+            return Ok(booksList);
+
         }
         // GET api/<BookController>/5
         [HttpGet("{id}")]
@@ -96,6 +102,7 @@ namespace WebApi.Controllers
         [HttpPost]
         public IActionResult Post(BookDetailsModel book)
         {
+            Console.WriteLine("entered post call ");
             try
             {
                 conn.Open();
